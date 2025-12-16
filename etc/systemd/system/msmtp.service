@@ -1,0 +1,8 @@
+[Unit]
+Description=Run through mail queue in /var/spool/msmtp
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/msmtp-runqueue.sh
+StandardOutput=null
+StandardError=null
