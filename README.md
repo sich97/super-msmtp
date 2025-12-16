@@ -1,0 +1,1 @@
+After installing dependencies, pleace copy the folder structure in this repo over to the system in question. Remember to replace sendmail by a symlink to /usr/local/bin/msmtp-enqueue.sh, as well as create a /var/spool/msmtp with 777 permissions. You might also need to enable the systemd services manually.
