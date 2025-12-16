@@ -1,1 +1,3 @@
-symlink to /usr/local/bin/msmtp-enqueue.sh
+#!/bin/bash
+
+logger -t msmtp -p local2.err "Sendmail is not symlinked to msmtp-enqueue.sh"
