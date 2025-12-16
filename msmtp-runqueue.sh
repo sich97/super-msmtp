@@ -52,7 +52,7 @@ for MAILFILE in *.mail; do
                 echo "No corresponding file $MSMTPFILE found"
                 continue
         fi
-        logrun msmtp $OPTIONS $(cat "$MSMTPFILE") -- -t msmtp -p local2.err < "$MAILFILE"
+        logrun msmtp $OPTIONS $(cat "$MSMTPFILE") -- -t msmtp -p local2.err < "$MAILFILE" || continue
         logger -t msmtp -p local2.info "Successfully sent $MAILFILE to $(sed -e 's/^.*-- \(.*$\)/\1/' $MSMTPFILE)"
         logrun rm "$MAILFILE" "$MSMTPFILE" -- -t msmtp -p local2.err || exit $?
 done
